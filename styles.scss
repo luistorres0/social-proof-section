@@ -16,10 +16,77 @@ body {
 }
 
 .container {
-  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 50px;
   background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
+  padding: 70px 20px;
+}
+
+#header-section {
+  text-align: center;
+  color: $darkGrayishMagenta;
+}
+
+#header-section h1 {
+  color: $veryDarkMagenta;
+  margin-bottom: 30px;
+}
+
+#ratings-section {
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+  text-align: center;
+  color: $veryDarkMagenta;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#ratings-section > div {
+  background-color: $lightGrayishMagenta;
+  padding: 20px 0;
+  border-radius: 7px;
+}
+
+#ratings-section > div > div {
+  margin-bottom: 10px;
+}
+
+#ratings-section img {
+  margin: 0 1px;
+}
+
+#review-section {
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+}
+
+#review-section > div {
+  background-color: $veryDarkMagenta;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+#review-section > div > :nth-child(1) {
+  margin-bottom: 20px;
+}
+
+#review-section img {
+  border-radius: 50%;
+  width: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+#review-section > div > div > :nth-child(3) {
+  color: $softPink;
 }
 
 .attribution {
@@ -28,4 +95,171 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .container {
+    padding: 9.5% 11%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 295px auto;
+    grid-gap: 0 40px;
+    background-image: url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg);
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  #header-section {
+    width: 440px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  #header-section h1 {
+    font-size: 47px;
+    font-weight: 700;
+    margin-bottom: 13px;
+    line-height: 1;
+  }
+
+  #header-section div {
+    line-height: 1.6;
+  }
+
+  #ratings-section {
+    grid-template-rows: 55px 55px 55px;
+    grid-row-gap: 15px;
+    padding-top: 10px;
+  }
+
+  #ratings-section > div {
+    width: 400px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 35px;
+  }
+
+  #ratings-section > div > div {
+    display: inline;
+    margin-right: 25px;
+  }
+
+  #ratings-section > :nth-child(2) {
+    margin: 0 auto;
+  }
+
+  #ratings-section img {
+    position: relative;
+    top: 2px;
+    margin: 0 2px;
+  }
+
+  #ratings-section > :nth-child(3) {
+    margin: 0 0 0 auto;
+  }
+
+  #review-section {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+  }
+
+  #review-section > div {
+    width: 290px;
+    height: 180px;
+    margin: 0 auto;
+    font-size: 13px;
+  }
+
+  #review-section > :nth-child(2) {
+    margin-top: 20px;
+  }
+
+  #review-section > :nth-child(3) {
+    margin-top: 30px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1400px) {
+  .container {
+    grid-row-gap: 50px;
+  }
+
+  #header-section {
+    width: 450px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  #header-section h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 13px;
+    line-height: 1.2;
+  }
+
+  #header-section div {
+    line-height: 1.8;
+  }
+
+  #ratings-section {
+    grid-template-rows: 70px 70px 70px;
+    grid-row-gap: 20px;
+    padding-top: 10px;
+  }
+
+  #ratings-section > div {
+    width: 500px;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 50px;
+  }
+
+  #ratings-section > div > div {
+    display: inline;
+    margin-right: 30px;
+  }
+
+  #ratings-section img {
+    position: relative;
+    top: 2px;
+    margin: 0 4px;
+  }
+
+  #ratings-section > :nth-child(2) {
+    margin: 0 auto;
+  }
+
+  #ratings-section > :nth-child(3) {
+    margin: 0 0 0 auto;
+  }
+
+  #review-section > div {
+    width: 350px;
+    height: 220px;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 50px 50px 10px;
+  }
+
+  #review-section > :nth-child(2) {
+    margin-top: 30px;
+  }
+
+  #review-section > :nth-child(3) {
+    margin-top: 60px;
+  }
 }
